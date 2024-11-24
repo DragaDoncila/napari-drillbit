@@ -1,8 +1,8 @@
 import numpy as np
 
 from napari_drillbit._widget import (
+    Driller,
     ExampleQWidget,
-    ImageThreshold,
     threshold_autogenerate_widget,
     threshold_magic_widget,
 )
@@ -36,7 +36,7 @@ def test_threshold_magic_widget(make_napari_viewer):
 def test_image_threshold_widget(make_napari_viewer):
     viewer = make_napari_viewer()
     layer = viewer.add_image(np.random.random((100, 100)))
-    my_widget = ImageThreshold(viewer)
+    my_widget = Driller(viewer)
 
     # because we saved our widgets as attributes of the container
     # we can set their values without having to "interact" with the viewer
